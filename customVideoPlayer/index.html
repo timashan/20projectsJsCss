@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css "
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Custom Video Player</title>
+  </head>
+  <body>
+    <video
+      src="../img/gone.mp4"
+      poster="../img/poster.png"
+      class="video"
+    ></video>
+    <div class="controls">
+      <button class="btn btn--play">
+        <div class="fas fa-play"></div>
+      </button>
+      <button class="btn btn--stop">
+        <div class="fas fa-stop"></div>
+      </button>
+      <input
+        type="range"
+        id="range"
+        min="0"
+        max="100"
+        step="0.1"
+        value="0"
+        class="progress"
+      />
+      <span class="timestamp">00:00</span>
+      <button class="btn btn--loop">
+        <div class="fas fa-redo"></div>
+      </button>
+    </div>
+  </body>
+</html>

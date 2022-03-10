@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Questrial", sans-serif;
+  color: white;
+  background-color: #222;
+  box-sizing: border-box;
+  font-size: 2rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.2);
+}
+
+.video {
+  background-color: #000;
+  height: 80%;
+  width: 60%;
+  cursor: pointer;
+}
+
+.video.stop {
+  opacity: 0.5;
+}
+
+.controls {
+  width: 60%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 3rem;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn.toggled {
+  opacity: 0.5;
+}
+
+.progress {
+  appearance: none;
+  flex: 1;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 50rem;
+  transition: box-shadow 0.2s;
+}
+
+.progress:focus {
+  box-shadow: 0 0 0 0.5rem rgba(255, 255, 255, 0.2);
+}
+
+.progress::-webkit-slider-runnable-track {
+  background-color: #dc3545;
+  border-radius: 50rem;
+  overflow: hidden;
+}
+
+.progress::-webkit-slider-thumb {
+  appearance: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 0.2s ease;
+  box-shadow: calc(-100vw - 1rem) 0 0 100vw rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 50em) {
+  .video {
+    width: 90%;
+    height: 60%;
+  }
+}
