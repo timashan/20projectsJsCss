@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: #34495e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  overflow: hidden;
+}
+
+h1 {
+  margin: 2rem;
+}
+
+.text {
+  margin-bottom: 2rem;
+}
+
+.game-container {
+  width: 45rem;
+  height: 35rem;
+  padding: 1.5rem 2rem;
+  margin: auto 0;
+  position: relative;
+}
+
+.figure {
+  fill: transparent;
+  stroke: white;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+.figure .hide {
+  display: none;
+}
+
+.word {
+  display: inline-flex;
+  gap: 0.5rem;
+  font-size: 3rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1.5rem;
+}
+
+.letter {
+  border-bottom: 3px solid #2980b9;
+  padding: 0.5rem 0;
+  height: 5rem;
+  width: 2rem;
+  text-align: center;
+}
+
+.wrong {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  text-align: right;
+}
+
+.wrong span {
+  font-size: 2.2rem;
+}
+
+.notification {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1.5rem 2rem;
+  border-radius: 1rem 1rem 0 0;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+}
+
+.notification.show {
+  transform: translate(0);
+}
+
+.message-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visiblity 0.5s ease;
+}
+
+.message-container.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  background-color: #2980b9;
+  text-align: center;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  transform: translate(-50%, -30%);
+  opacity: 0;
+  transition: 0.5s ease 0.3s;
+}
+
+.message-container.show .message {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.message p {
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+}
+
+.btn--play {
+  font-family: inherit;
+  background-color: white;
+  border: none;
+  font-size: 1.8rem;
+  color: #2980b9;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.btn--play:hover {
+  opacity: 0.9;
+}
