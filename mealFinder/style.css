@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.6rem;
+  color: white;
+  background: #2d2013;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+h1,
+h2 {
+  margin: 2rem;
+}
+
+.form input {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  width: 30rem;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.form input:focus {
+  outline: none;
+}
+
+.btn {
+  background-color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  padding: 1rem;
+  border: none;
+}
+
+.btn--search {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.btn--random {
+  margin-left: 1rem;
+}
+
+.results-heading {
+  margin: 2rem 0;
+}
+
+.meals {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+}
+
+.meal {
+  position: relative;
+  cursor: pointer;
+}
+
+.meal img {
+  width: 18rem;
+  height: 18rem;
+  border: 0.5rem solid white;
+  border-radius: 0.5rem;
+}
+
+.meal__info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.5s;
+  text-align: center;
+}
+
+.meal:hover .meal__info {
+  opacity: 1;
+}
+
+.single-meal {
+  text-align: center;
+  width: 70%;
+}
+
+.single-meal p {
+  line-height: 1.5;
+}
+
+.single-meal img {
+  width: 30rem;
+  border: 0.5rem solid white;
+}
+
+.single-meal__info {
+  text-align: center;
+  font-size: 2rem;
+  border: 2px dashed #e09850;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 2rem auto;
+}
+
+.single-meal__info p {
+  margin: 2rem 0;
+}
+
+.ingredients__list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.ingredients__list li {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+}
