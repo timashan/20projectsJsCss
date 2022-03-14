@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.6rem;
+  height: 100vh;
+  background-image: linear-gradient(0deg, #f7f7f7 23.8%, #fcdddd 92%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-container {
+  background-color: white;
+  box-shadow: 0 20px 20px 0 rgb(252 169 169 / 0.6);
+  border-radius: 1.5rem;
+  display: flex;
+  padding: 2rem 1rem 2rem 3rem;
+  margin: 10rem 0;
+  position: relative;
+}
+
+.img-container {
+  width: 11rem;
+  position: relative;
+}
+
+.img-container::after {
+  content: '';
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: white;
+  bottom: 100%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 50%);
+  z-index: 1;
+}
+
+.img-container img {
+  border-radius: 50%;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 11rem;
+  object-fit: cover;
+  position: absolute;
+  animation: rotateDisk 3s linear infinite;
+  animation-play-state: paused;
+  z-index: 1;
+}
+
+.music-info {
+  width: 90%;
+  border-radius: 1rem 1rem 0 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 1rem 1rem 1rem 15rem;
+  z-index: -1;
+  transition: transform 0.5s ease;
+}
+
+.music-container.play .music-info {
+  transform: translate(-50%, -100%);
+  transition: all 0.5s ease, z-index 0.5s;
+  z-index: 0;
+}
+
+.music-container.play .img-container img {
+  animation-play-state: running;
+}
+
+@keyframes rotateDisk {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.navigation {
+  padding: 0.7rem 5rem 0.7rem 3rem;
+  display: flex;
+  gap: 6rem;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  color: #dfdbdf;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  color: #aaa;
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+.btn--play {
+  font-size: 3.5rem;
+  color: #cdc2d0;
+}
+
+.btn--play i {
+  width: 5rem;
+}
+
+.music-info:hover .progress-container {
+  transform: scaleY(2);
+}
+
+.progress-container {
+  margin: 1rem 0;
+  background-color: #444;
+  width: 100%;
+  height: 0.4rem;
+  border-radius: 50rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.progress {
+  background-color: #fe8daa;
+  width: 0;
+  height: inherit;
+  border-radius: 50rem;
+}

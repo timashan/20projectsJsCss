@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.6rem;
+  background-color: #f7f7f7;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  margin-bottom: 5rem;
+}
+
+h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
+}
+
+.container {
+  width: 35rem;
+}
+
+.balance__text {
+  text-transform: uppercase;
+}
+
+.in-ex-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+  margin: 2rem 0 4rem 0;
+}
+
+.in-ex-container > * {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  margin: 2rem 0;
+  font-size: 2rem;
+}
+
+.in-ex-container div:first-child {
+  border-right: 1px solid #ccc;
+}
+
+.income {
+  color: #2ecc71;
+}
+
+.expense {
+  color: #c0392b;
+}
+
+.list {
+  list-style-type: none;
+  margin: 2rem 0 4rem 0;
+  /* max-height: 20rem;
+  overflow-y: scroll; */
+}
+
+.list li {
+  background-color: white;
+  padding: 1.2rem;
+  box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.list li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn--delete {
+  background-color: #e74c3c;
+  font-size: 2rem;
+  padding: 0.2rem 0.5rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.list li:hover .btn--delete {
+  opacity: 1;
+}
+
+.list li.plus {
+  border-right: 0.5rem solid #2ecc71;
+}
+
+.list li.minus {
+  border-right: 0.5rem solid #c0392b;
+}
+
+.form {
+  margin-top: 1rem;
+}
+
+.form label {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form input {
+  font-family: inherit;
+  font-size: 1.8rem;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.form input:focus {
+  outline: none;
+  background-color: #f7f7f7;
+}
+
+.form input:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.btn--submit {
+  padding: 1rem;
+  font-size: 1.8rem;
+  width: 100%;
+  margin-top: 2rem;
+  background-color: #9c88ff;
+}
+
+.btn--submit:hover {
+  background-color: #856dff;
+}
+
+.btn--submit:active {
+  transform: scale(0.98);
+}
