@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+      integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
+      crossorigin="anonymous"
+    />
+    <script defer src="script.js"></script>
+    <title>Memorty Cards</title>
+  </head>
+  <body>
+    <p></p>
+    <h1>
+      Memory Cards
+      <button class="btn btn--add">
+        <i class="fas fa-plus"></i>
+        <span> Add New Card </span>
+      </button>
+    </h1>
+
+    <div class="cards">
+      <!-- <div class="card active">
+        <div class="card__inner">
+          <div class="card--front"><p>question</p></div>
+          <div class="card--back"><p>answer</p></div>
+        </div>
+      </div> -->
+    </div>
+
+    <div class="navigation">
+      <button class="btn btn--left">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <p class="tot-cards">0/0</p>
+      <button class="btn btn--right">
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+    <button class="btn btn--clear">
+      <i class="fas fa-trash"></i>
+      <span>Clear cards</span>
+    </button>
+
+    <div class="add-container">
+      <h1>
+        <span>Add New Card</span>
+        <button class="btn btn--close">&times;</button>
+      </h1>
+
+      <div class="form-control">
+        <label for="question">Question</label>
+        <textarea id="question" placeholder="Enter Question..."></textarea>
+      </div>
+
+      <div class="form-control">
+        <label for="answer">Answer</label>
+        <textarea id="answer" placeholder="Enter Answer..."></textarea>
+      </div>
+
+      <button class="btn btn--add-card show">
+        <i class="fas fa-plus"></i>
+        <span>Add Card</span>
+      </button>
+    </div>
+  </body>
+</html>

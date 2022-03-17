@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.6rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.btn {
+  font-family: inherit;
+  background-color: transparent;
+  border: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.btn--add {
+  background-color: white;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  right: 0;
+  transform: translate(120%, 25%);
+  border: 1px solid #aaa;
+}
+
+.btn--add-card {
+  background-color: white;
+  padding: 1rem 2rem;
+  border: 1px solid #aaa;
+}
+
+.cards {
+  width: 50rem;
+  height: 30rem;
+  position: relative;
+  perspective: 100rem;
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateX(50%) rotateY(-50deg);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.card.left {
+  transform: translate(-50%) rotateY(50deg);
+}
+
+.card.active {
+  opacity: 1;
+  transform: translate(0);
+  z-index: 1;
+}
+
+.card__inner {
+  border-radius: 0.4rem;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 0rem 0.6rem 0.3rem rgba(0, 0, 0, 0.2);
+}
+
+.card.show .card__inner {
+  transform: rotateX(180deg);
+}
+
+.card--front,
+.card--back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  justify-content: center;
+  font-size: 2rem;
+  backface-visibility: hidden;
+}
+
+.card--front::after,
+.card--back::after {
+  content: '\f021  Flip';
+  font-family: 'Font Awesome 5 Free', 'Lato', sans-serif;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.card--back {
+  transform: rotateX(180deg);
+}
+
+.navigation {
+  gap: 3rem;
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.btn--left,
+.btn--right {
+  font-size: 2rem;
+}
+
+.btn--clear {
+  background-color: white;
+  padding: 1rem 2rem;
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+  border: 1px solid #aaa;
+}
+
+.btn--close {
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  right: -2rem;
+  transform: translateY(-50%);
+}
+
+.add-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.add-container.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form-control {
+  width: 50rem;
+  margin-bottom: 2rem;
+}
+
+.form-control label {
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.form-control textarea {
+  font-size: 1.6rem;
+  padding: 1rem;
+  width: 100%;
+  height: 6.5rem;
+  border: 1px solid #aaa;
+  border-radius: 0.5rem;
+}
