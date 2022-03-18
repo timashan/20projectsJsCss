@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  color: white;
+  background: #0095dd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 4.5rem;
+  margin: 3rem 0;
+}
+
+#canvas {
+  background-color: #eee;
+  border-radius: 0.5rem;
+}
+
+.btn {
+  color: white;
+
+  background-color: #000;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.btn--rules {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+}
+
+.btn:hover {
+  background-color: #111;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.rules {
+  padding: 4rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40rem;
+  background-color: #333;
+  height: 100vh;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.rules.show {
+  transform: translate(0);
+}
+
+.rules > * {
+  margin-bottom: 3rem;
+  line-height: 1.3;
+}

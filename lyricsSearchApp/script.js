@@ -10,6 +10,7 @@ const fetchSongs = async function (url) {
   try {
     const res = await fetch(url);
     const data = await res.json();
+    if (!res.ok) throw new Error('API ERROR');
     console.log(data);
     return data;
   } catch (err) {

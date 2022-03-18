@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  color: white;
+  height: 100vh;
+  background: url(../img/bg.jpg) no-repeat center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 2rem;
+}
+
+.container {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 30rem;
+  width: 30rem;
+}
+
+.container.grow {
+  animation: grow 3.5s ease-in-out forwards;
+}
+
+.container.shrink {
+  animation: shrink 3.5s ease-in-out forwards;
+}
+
+.text {
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.circle {
+  height: 100%;
+  width: 100%;
+  background-color: #010f1c;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.gradient-circle {
+  height: 32rem;
+  width: 32rem;
+  border-radius: 50%;
+  background: conic-gradient(#55b7a4 40%, white 40%, white 60%, #336d62 60%);
+  position: absolute;
+  left: -1rem;
+  top: -1rem;
+}
+
+.pointer {
+  height: 2rem;
+  width: 2rem;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.pointer-container {
+  position: absolute;
+  height: 19rem;
+  top: -4rem;
+  left: 14rem;
+  transform-origin: bottom center;
+  animation: rotate 7.5s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes grow {
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1.2);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
